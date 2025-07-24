@@ -19,6 +19,7 @@ interface DroppableAreaProps {
   className?: string;
   style?: React.CSSProperties;
   onDragStateChange?: (isDragging: boolean) => void;
+  onClick?: (e: React.MouseEvent) => void;
   id?: string;
 }
 
@@ -112,6 +113,7 @@ export const DroppableArea: React.FC<DroppableAreaProps> = ({
   className,
   style,
   onDragStateChange,
+  onClick,
   id,
 }) => {
   const { onDragEnter, onDragOver, onDrop, onDragLeave } =
@@ -124,6 +126,7 @@ export const DroppableArea: React.FC<DroppableAreaProps> = ({
       onDrop={onDrop}
       onDragOver={onDragOver}
       onDragLeave={onDragLeave}
+      onClick={onClick}
       className={className}
       style={style}
       role="region"
